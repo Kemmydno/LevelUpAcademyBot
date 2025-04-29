@@ -1,12 +1,12 @@
-from aiogram import Bot, Dispatcher, types
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import asyncio
 import logging
 import os
-import asyncio
+from aiogram import Bot, Dispatcher, types
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiohttp import web
 
-# Вставь сюда свой токен
-TOKEN = '7470615660:AAFe853HvoM_y7sPi9mAt4j7e_N_jDfbqSo'
+# Токен бота
+TOKEN = '7470615660:AAFe853HvoM_y7sPi9mAt4j7e_N_jDfbqSo'  # <-- Вставил твой токен!
 
 # Настройка логов
 logging.basicConfig(level=logging.INFO)
@@ -41,7 +41,7 @@ async def process_callback(callback_query: types.CallbackQuery):
         await bot.answer_callback_query(callback_query.id)
         await bot.send_message(callback_query.from_user.id, "Для покупки полного пакета всех курсов напишите в поддержку: @CanUFixMePls")
 
-# Фиктивный веб-сервер для Render
+# Фиктивный веб-сервер для Railway
 async def handle(request):
     return web.Response(text="Bot is running.")
 
