@@ -1,2 +1,2 @@
-start: python main.py
+python-telegram-bot
 aiohttp
